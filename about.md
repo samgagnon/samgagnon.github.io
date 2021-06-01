@@ -8,7 +8,8 @@ image:
   feature: soft-trees.jpg
 ---
 
-This is built on Semantic.gs grid framework which I edited a bit to make it fluid. I hope you enjoy using, forking, whatevering this theme as much as I did making it. 
+### Does this work?
+I'm just trying to figure out how this works.
 
 ### Features
 * flexible, uses max-width for responsive goodness
