@@ -1,12 +1,12 @@
 ---
-layout: post
+layout: post-no-feature
 title: Sam's Corner
 description: Welcome to my repository of disjointed thoughts
 tags: [mystery, adventure]
 ---
 
 <figure>
-	<img src="/images/staircaseguy.jpg" width=500 height=600>
+	<img src="/images/staircaseguy.jpg" width=200 height=250>
 	<figcaption>Hey look it's me.</figcaption>
 </figure>
 
