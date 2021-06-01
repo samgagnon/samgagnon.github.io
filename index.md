@@ -5,8 +5,10 @@ description: Welcome to my repository of disjointed thoughts
 tags: [mystery, adventure]
 ---
 
+### Have you seen this man?
+
 <figure>
-	<img src="/images/staircaseguy.jpg" width=200 height=250>
+	<img src="/images/listenpal.jpg">
 	<figcaption>Hey look it's me.</figcaption>
 </figure>
 
