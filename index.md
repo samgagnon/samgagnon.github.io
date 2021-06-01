@@ -3,16 +3,12 @@ layout: post
 title: Sam's Corner
 description: Welcome to my repository of disjointed thoughts
 tags: [mystery, adventure]
-image:
-  feature: typewriter.jpg
 ---
 
-{% highlight html linenos %}
 <figure>
 	<img src="/images/staircaseguy.jpg">
 	<figcaption>Hey look it's me.</figcaption>
 </figure>
-{% endhighlight %}
 
 ### Who is this guy?
 I'm a master's student at Bishop's University in Sherbrooke. I study multi-messenger cosmology,
