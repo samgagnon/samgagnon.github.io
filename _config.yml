@@ -30,6 +30,8 @@ opengraph:
 links:
   - title: About
     url: /about
+  - title: Research
+    url: /research
   - title: Blog
     url: /articles
   #   external: true
