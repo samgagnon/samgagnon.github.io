@@ -1,7 +1,7 @@
 ---
 layout: home
 permalink: /articles/index.html
-title: "Articles"
+title: "Blog"
 tags: [blog, graphic design]
 image:
   feature: typewriter.jpg
