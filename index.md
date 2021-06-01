@@ -6,7 +6,7 @@ tags: [mystery, adventure]
 ---
 
 <figure>
-	<img src="/images/staircaseguy.jpg">
+	<img src="/images/staircaseguy.jpg" width=500 height=600>
 	<figcaption>Hey look it's me.</figcaption>
 </figure>
 
