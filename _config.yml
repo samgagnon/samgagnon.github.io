@@ -30,14 +30,14 @@ opengraph:
 links:
   - title: About
     url: /about
-  - title: Research
-    url: /research
+  - title: Projects
+    url: /projects
+  - title: Papers
+    url: /papers
+  - title: Consulting
+    url: /consulting
   - title: Blog
     url: /blog
-  #   external: true
-  # - title: Cole Who?
-  #   url: http://coletownsend.com
-  #   external: true
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    America/New_York
