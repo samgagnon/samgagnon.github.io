@@ -7,7 +7,7 @@ tags: [about, Samuel Gagnon-Hartman, Bishop's, machine learning, physics, comput
 image:
   feature: dutcharmy.jpg
 ---
-I'm a master's student at the Bishop University working on a likelihood-free inference model to infer the Hubble constant from multi-messenger binary neutron star merger measurements. I work with [Prof. John Ruan](http://craq-astro.ca/un_membre/?lang=en&id=John_J.Ruan).
+I'm a master's student at Bishop's University working on a likelihood-free inference model to infer the Hubble constant from multi-messenger binary neutron star merger measurements. I work with [Prof. John Ruan](http://craq-astro.ca/un_membre/?lang=en&id=John_J.Ruan).
 
 ### Does this work?
 It looks like it
