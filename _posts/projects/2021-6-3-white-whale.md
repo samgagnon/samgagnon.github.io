@@ -1,7 +1,7 @@
 ---
 layout: external
 title: Likelihood-free Inference of the Hubble Constant
-role: Researcger
+role: Researcher
 category: projects
 # external_url: https://www.flickr.com/photos/thejaan/
 tags: [hubble constant, likelihood-free inference, multi-messenger, astrophysics, cosmology, john ruan, samuel gagnon-hartman]
