@@ -2,5 +2,7 @@
 layout: projects
 permalink: /projects/index.html
 title: "Projects"
-tags: [blog, projects, samuel gagnon-hartman, machine learning, cosmology]
+tags: [projects, samuel gagnon-hartman, machine learning, cosmology]
+image:
+  feature: storming.jpg
 ---
