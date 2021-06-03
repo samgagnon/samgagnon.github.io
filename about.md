@@ -25,7 +25,7 @@ My name was given to me by my parents. The same is true for most (but not all) o
 
 <p style="text-align:center">
 <a href="https://twitter.com/GagnonHartman"><i class="fab fa-twitter"></i>Twitter</a>
-<a href="http://www.linkedin.com/in/sgagnonhartman"><i class="fab fa-linkedin"></i>LinkedIn</a>
+<a href="http://www.linkedin.com/in/samuelgagnonhartman"><i class="fab fa-linkedin"></i>LinkedIn</a>
 <!-- <a href="https://soundcloud.com/lyfos"><i class="fab fa-soundcloud"></i>Soundcloud</a> -->
 <!-- <a href="https://www.flickr.com/photos/thejaan/"><i class="fab fa-flickr"></i>Flickr</a> -->
 <a href="https://github.com/samgagnon"><i class="fab fa-github"></i>GitHub</a>
@@ -35,9 +35,3 @@ My name was given to me by my parents. The same is true for most (but not all) o
 ---
 
 Colophon: thanks [Cole Townsend](http://coletownsend.com/) the Jekyll theme – the code is available [here](https://github.com/altosaar/jaan.io).
-
-
-
-
-
-
