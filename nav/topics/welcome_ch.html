@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<base target="_top" />
+<meta name="author" content="Samuel Gagnon-Hartman" />
+<link rel="stylesheet" href="/nav/topics/nav.css" type="text/css" />
+
+<title>Welcome to Danaan</title>
+<script type="text/javascript">
+
+//<![CDATA[
+
+function pquery() {
+    var query = window.parent.parent.location.search.substring(1);
+
+    query = query.replace(/[^\w\-\=:]/g, "");
+    if (query != "") {
+        var m;
+
+        //  topic=physics
+
+        if (m = query.match(/^topic=(\w+)(:.+)?$/)) {
+            if (m[2]) {
+                m[2] = m[2].replace(/^:/, "#");
+            } else {
+                m[2] = "";
+            }
+            window.location.href = m[1].toLowerCase() + ".html" + m[2];
+        }
+
+        //  welcome
+
+        if (m = query.match(/^welcome$/)) {
+            window.location.href = "welcome.html";
+        }
+    }
+}
+
+function submitSearch() {
+    if (document.getElementById("searchLocal").checked) {
+        if (!document.getElementById("searchQuery").value.match(/\ssite:/)) {
+            document.getElementById("searchQuery").value += " site:fourmilab.ch";
+        }
+    } else {
+        document.getElementById("searchQuery").value =
+            document.getElementById("searchQuery").value.replace(
+                /\ssite:fourmilab\.ch/, "");
+    }
+    return true;
+}
+
+//]]>
+</script>
+</head>
+<body class="items" onload="pquery();">
+<h1 class="c" style="margin-bottom: 0px;">Welcome to Danaan</h1>
+<p class="c" style="margin-top: 1ex;">
+<em>
+Last update: 17 September 2024
+</em>
+</p>
+
+
+<p />
+
+<blockquote>
+<p class="j">
+This site is developed and maintained by Samuel Gagnon-Hartman,
+a PhD student studying cosmology at the 
+<a href="https://en.wikipedia.org/wiki/Scuola_Normale_Superiore_di_Pisa" target="_top">Scuola Normale 
+    Superiore di Pisa</a>. 
+A variety of essays, course materials, software, and musings on various 
+topics are available here; click on entries in the frame to the left
+to display a table of contents for that topic. Items
+which span more than one category are listed in all.
+</p>
+
+<p class="j">
+A comprehensive
+(and large) list of all items on the site is available as
+a frame- and graphics-free <a href="map.html" target="_top">Site Map</a>.
+</p>
+
+<p class="j">
+Except for a few clearly-marked exceptions, all the material on
+this site is in the public domain and may
+be used in any manner without permission, restriction, attribution, or
+compensation.  <a href="/">Back links</a>
+to this site are welcome.
+</p>
+</blockquote>
+
+<!-- Temporary spot for alerts or featured images -->
+
+<!-- Search Brave -->
+<form method="get" id="search" action="https://search.brave.com/search"
+    onsubmit="return submitSearch();" target="_blank">
+  <table style="background-color: #BBBBBB; margin-left: auto; margin-right: auto;" border="2">
+    <tr style="vertical-align: middle;">
+      <td style="padding: 6px;">
+        <a href="https://search.brave.com/" class="i" target="_blank"><img
+            src="/images/icons/brave_search_64.png" border="0" alt="Brave Search"
+            align="middle" width="64" height="64" /></a>
+      </td>
+      <td style="font-family: sans-serif; font-size: smaller; margin-bottom: 0px; margin-top: 0px; padding: 6px; text-align: center;">
+        <input type="text" name="q" id="searchQuery" size="40" maxlength="255" value="" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="source" value="web" />
+        <br />
+        <label><input type="radio" id="searchLocal" name="sites" value="www.fourmilab.ch" checked="checked" />&nbsp;Search&nbsp;Fourmilab</label>
+        &nbsp;
+        <label><input type="radio" id="searchWeb" name="sites" value="" />&nbsp;Search&nbsp;the&nbsp;Web</label>
+      </td>
+    </tr>
+  </table>
+</form>
+<!-- Search Brave -->
+
+<!-- Temporary box for links to in-the-news pages
+-->
+
+<h3 class="c" style="font-family: Arial,Helvetica,sans-serif;">
+    <a href="/fourmilog/"><cite>Fourmilog</cite>:
+    Site Update and Web Log</a>
+    <br />
+    <a href="https://scanalyst.fourmilab.ch/c/scanalyzer/5">SCANALYZER</a>
+    <a href="https://scanalyst.fourmilab.ch/t/about-the-scanalyzer-category/11"><span
+        style="font-size: 75%; font-style: italic;">(What's this?)</span></a>
+    <br />
+    <a href="/documents/reading_list/">John Walker's Reading List</a>
+    <br />
+    <a href="/images/album/">Fourmilab Photo Album</a>
+    <br />
+    <span style="font-size: smaller;">
+    <a href="https://twitter.com/Fourmilab"
+        target="Fourmilog_Aux">Follow Fourmilab on Twitter</a></span>
+</h3>
+
+
+<h3>
+New and frequently-visited pages
+</h3>
+
+<dl compact="compact">
+<!--  To highlight new items
+-->
+
+<dt /><dd><img src="/images/bullets/ball_orange_white.gif" width="19" height="19" align="top" alt="" />
+    <b><i style="color: #FF6600;">New:</i>
+    <a href="https://scanalyst.fourmilab.ch/t/nuclear-fission-fuel-is-inexhaustible/1257">Nuclear
+    Fission Fuel is Inexhaustible</a></b>
+</dd>
+
+<dt /><dd><img src="/images/bullets/ball_orange_white.gif" width="19" height="19" align="top" alt="" />
+    <b><i style="color: #FF6600;">New:</i> <a href="/documents/meals/"><cite>FourmiFood</cite>:</a>
+    <a href="/documents/meals/salmon_pasta_tonnato/">Salmon Pasta Tonnato</a>;
+	<a href="/documents/meals/eggplant_parmasham/">Eggplant Parma-Sham</a>
+</dd>
+
+<dt /><dd><img src="/images/bullets/ball_orange_white.gif" width="19" height="19" align="top" alt="" />
+    <b><i style="color: #FF6600;">New:</i> <a href="/etexts/www/BibleStrat">The Stratified Bible</a></b>
+</dd>
+
+<dt /><dd><img src="/images/bullets/ball_orange_white.gif" width="19" height="19" align="top" alt="" />
+    <b><i style="color: #FF6600;">New:</i> <a href="/autofile/software/classwar/">ClassWar</a></b>
+</dd>
+
+<dt /><dd><img src="/images/bullets/ball_orange_white.gif" width="19" height="19" align="top" alt="" />
+    <b><i style="color: #FF6600;">New:</i> <a href="/webtools/blockchain/">Blockchain Tools</a></b>
+</dd>
+
+<dt /><dd><img src="/images/bullets/ball_orange_white.gif" width="19" height="19" align="top" alt="" />
+    <b><i style="color: #FF6600;">New:</i> <a href="/webtools/unum/"><cite>UNUM</cite>&mdash;Updated for Unicode 14.0</a></b>
+</dd>
+
+<dt /><dd><img src="/images/bullets/ball_orange_white.gif" width="19" height="19" align="top" alt="" />
+    <b><i style="color: #FF6600;">New:</i> <a href="/documents/online_privacy/">Tools for Online Privacy</a></b>
+</dd>
+
+<dt /><dd><img src="/images/bullets/ball_orange_white.gif" width="19" height="19" align="top" alt="" />
+    <b><i style="color: #FF6600;">New:</i> <a href="/webtools/MindGrenade/">Mind Grenade</a></b>
+</dd>
+
+<dt /><dd><img src="/images/bullets/ball_orange_white.gif" width="19" height="19" align="top" alt="" />
+    <b><i style="color: #FF6600;">New:</i> <a href="/webtools/units/">Units Calculator</a></b>
+</dd>
+
+
+<dt /><dd>&nbsp;</dd>
+
+<dt /><dd><img src="/images/bullets/ball_blue_white.gif" width="19" height="19" align="top" alt="" /> <b><a href="/javascrypt/"><cite>JavaScrypt</cite>: Browser-Based Cryptography</a></b></dd>
+<dt /><dd><img src="/images/bullets/ball_blue_white.gif" width="19" height="19" align="top" alt="" /> <b><cite><a href="/documents/digital-imprimatur/">The Digital Imprimatur</a></cite></b> and
+    <b><cite><a name="netslum" href="/documents/netslum/">The Internet Slum</a></cite></b></dd>
+<dt /><dd><img src="/images/bullets/ball_blue_white.gif" width="19" height="19" align="top" alt="" /> <a href="/hotbits/"><b><cite>HotBits</cite>: Random numbers from radioactive decay</b></a></dd>
+<dt /><dd><img src="/images/bullets/ball_blue_white.gif" width="19" height="19" align="top" alt="" /> <a href="/autofile/"><b><cite>The Autodesk File</cite></b></a></dd>
+<dt /><dd><img src="/images/bullets/ball_blue_white.gif" width="19" height="19" align="top" alt="" /> <a href="/earthview/"><b>Earth and Moon Viewer</b></a></dd>
+<dt /><dd><img src="/images/bullets/ball_blue_white.gif" width="19" height="19" align="top" alt="" /> <b><a href="/hackdiet/"><cite>The Hacker's Diet</cite></a></b></dd>
+<dt /><dd><img src="/images/bullets/ball_blue_white.gif" width="19" height="19" align="top" alt="" /> <b><a href="/cellab/"><cite>Cellular Automata Laboratory</cite></a></b></dd>
+<dt /><dd><img src="/images/bullets/ball_blue_white.gif" width="19" height="19" align="top" alt="" /> <b><a href="/?topic=paleo"><cite>Paleo Postings</cite></a> The paleo diet and lifestyle</b></dd>
+<dt /><dd><img src="/images/bullets/ball_blue_white.gif" width="19" height="19" align="top" alt="" /> <a href="/solar/"><b>Solar System Live</b></a></dd>
+<dt /><dd><img src="/images/bullets/ball_blue_white.gif" width="19" height="19" align="top" alt="" /> <a href="/yoursky/"><b>Your Sky</b></a></dd>
+<dt /><dd><img src="/images/bullets/ball_blue_white.gif" width="19" height="19" align="top" alt="" /> <b>Total Solar Eclipse <a href="/images/eclipse_2010/">2010</a>, <a href="/images/eclipse_2008/">2008</a>, <a href="/images/eclipse_2001/">2001</a>, and <a href="/images/eclipse99/">1999</a></b></dd>
+<dt /><dd><img src="/images/bullets/ball_blue_white.gif" width="19" height="19" align="top" alt="" /> <b>Bipolar: <a href="/images/eclipse_2008/">North Pole (2008)</a>, <a href="/images/antarctica_2013/">South Pole (2013)</a></b></dd>
+<dt /><dd><img src="/images/bullets/ball_blue_white.gif" width="19" height="19" align="top" alt="" /> <a href="/babbage/"><b><cite>The Analytical Engine</cite></b></a></dd>
+</dl>
+
+</body>
+</html>

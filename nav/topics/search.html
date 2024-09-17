@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<base target="_top" />
+<meta name="author" content="John Walker" />
+<link rel="stylesheet" href="/nav/topics/nav.css" type="text/css" />
+
+<title>Search Fourmilab</title>
+<script type="text/javascript">
+
+//<![CDATA[
+
+function submitSearch() {
+    if (document.getElementById("searchLocal").checked) {
+        if (!document.getElementById("searchQuery").value.match(/\ssite:/)) {
+            document.getElementById("searchQuery").value += " site:fourmilab.ch";
+        }
+    } else {
+        document.getElementById("searchQuery").value =
+            document.getElementById("searchQuery").value.replace(
+                /\ssite:fourmilab\.ch/, "");
+    }
+    return true;
+}
+
+//]]>
+</script>
+
+</head>
+
+<body class="items">
+
+<blockquote>
+
+<h1 class="c">Search Fourmilab</h1>
+
+<p class="j">
+This page allows you to perform a
+<a href="https://search.brave.com/" target="_blank">Brave</a>
+search on all the documents at this site.  Enter your query in
+the box below and press the button to start the search.
+</p>
+
+<!-- Search Brave -->
+<form method="get" id="search" action="https://search.brave.com/search"
+    onsubmit="return submitSearch();" target="_blank">
+  <table style="background-color: #BBBBBB; margin-left: auto; margin-right: auto;" border="2">
+    <tr style="vertical-align: middle;">
+      <td style="padding: 6px;">
+        <a href="https://search.brave.com/" class="i" target="_blank"><img
+            src="/images/icons/brave_search_64.png" border="0" alt="Brave Search"
+            align="middle" width="64" height="64" /></a>
+      </td>
+      <td style="font-family: sans-serif; font-size: smaller; margin-bottom: 0px; margin-top: 0px; padding: 6px; text-align: center;">
+        <input type="text" name="q" id="searchQuery" size="40" maxlength="255" value="" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="source" value="web" />
+        <br />
+        <label><input type="radio" id="searchLocal" name="sites" value="www.fourmilab.ch" checked="checked" />&nbsp;Search&nbsp;Fourmilab</label>
+        &nbsp;
+        <label><input type="radio" id="searchWeb" name="sites" value="" />&nbsp;Search&nbsp;the&nbsp;Web</label>
+      </td>
+    </tr>
+  </table>
+</form>
+<!-- Search Brave -->
+
+</blockquote>
+
+</body>
+</html>
