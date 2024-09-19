@@ -1,0 +1,593 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Apparent Diurnal Variation in Background Radiation</title>
+<link rel="stylesheet" href="/documents/styles/standard_screen.css" type="text/css" />
+<meta name="keywords" content="background, radiation, diurnal, daily, variation" />
+<meta name="description" content="Apparent Diurnal Variation in Background Radiation" />
+<meta name="author" content="John Walker"  />
+<meta name="robots" content="index" />
+<style type="text/css">
+    h1 {
+        margin-bottom: 0px;
+    }
+
+    p.cn {
+        text-align: center;
+        margin-top: 0px;
+    }
+
+    /* Text with subscript and superscripts */
+
+    p.subsuper {
+        line-height: 130%;
+        text-align: justify;
+    }
+
+    .subsuper sub, .subsuper sup {
+        line-height: 0px;
+    }
+
+    /* Count histogram table */
+
+    table.sidebar {
+        color: inherit;
+        background-color: #FFFF90;
+        float: right;
+        margin-left: 8px;
+        font-size: smaller;
+    }
+
+    table.sidebar td {
+        text-align: right;
+    }
+
+    /* Left inset graph */
+
+    table.leftgraph {
+        float: left;
+        margin-right: 8px;
+    }
+
+    table.leftgraph td {
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: smaller;
+        text-align: center;
+    }
+</style>
+<script type="text/javascript" src="/documents/scripts/externalLinks.js">
+</script>
+</head>
+
+<body class="standard" onload="externalLinks();">
+
+<h1 class="c">Apparent Diurnal Variation<br />
+in Background Radiation</h1>
+<p class="cn">
+by <a href="/">John Walker</a><br />
+April 16, 2001<br />
+Updated: October 9th, 2017
+</p>
+
+<p />
+<hr />
+<p />
+
+<p class="subsuper">
+<img src="sensor.jpg" width="320" height="409" class="right"
+    alt="Aware Electronics RM-80 Radiation Monitor" />
+Since October 16th, 1998, I've
+run an
+<a href="http://www.aw-el.com/" rel="Target:Fourmilab_Cosmic_Aux">Aware Electronics</a> RM-80
+radiation monitor pretty much continuously, connected to a serial port
+on a 1992 vintage 486/50 machine.  The RM-80 uses a 7313 pancake
+Geiger-M&uuml;ller tube.  The tube is halogen quenched and has a minimum
+dead time of 30&nbsp;&micro;S, with a mica window which allows alpha particles
+to pass.  The computer interface generates high voltage for the
+tube from the Data Terminal Ready and Request to Send pins of the
+serial port and toggles the state of the Ring Indicator line whenever
+a count is detected.  The serial port can be programmed to interrupt
+on changes in the state of this signal, making it straightforward to
+implement radiation monitoring in software.  Tube sensitivity,
+calibrated with Cesium-137 (<sup>137</sup>Cs), is 3.54&nbsp;&micro;R/hour
+per count per minute.
+</p>
+
+<p class="subsuper">
+The second generation <a href="/hotbits/">HotBits</a>
+generator uses an RM-80 detector
+illuminated by a 5 microcurie <sup>137</sup>Cs check source.
+I decided to attach the HotBits spare detector to a PC
+and let it run as a background radiation monitor, as much as
+anything to let the detector run for a while to guard against
+&ldquo;infant mortality&rdquo; in any of its components, should it have
+to take over for the in-service detector.  Aware Electronics
+supplies the detector with a DOS driver program called
+<tt><b>AW-SRAD</b></tt>, which I used to log the number of
+counts per minute, logging the collected data to files
+in CSV format.
+</p>
+
+<h3>Database Coverage</h3>
+
+<p class="j">
+Here's a plot that shows the extent of coverage by month
+over the period I monitored background radiation.  The month
+of May, for example, has just about one year's complete data
+(this doesn't necessarily mean all of May for one year&mdash;it
+might be half of May in 1999 and half in 2000, for example).
+November has the greatest coverage, in excess of 2.5 years
+of data.  The summer months have the least coverage due to
+vacations and other circumstances which caused me to shut
+down the machine connected to the detector.  Since we're
+examining only diurnal variations&mdash;change in flux within a
+day&mdash;the uneven coverage over the months shouldn't be a
+problem.  If we wanted to explore, for example, whether any
+diurnal variation we detected varied from month to month, it
+would be best to extract a subset of the data weighted
+equally by month, ideally with full coverage of each day of
+the solar year even though the days may be taken from
+different years.
+</p>
+
+<p class="c">
+<img src="crcover.png" width="609" height="373" alt="Database coverage by month" />
+</p>
+
+<h3>Counts per Minute Histogram</h3>
+
+<table class="sidebar" border="border">
+<tr><th>Counts</th> <th>Times</th></tr>
+<tr><td>22</td> <td>3</td></tr>
+<tr><td>23</td> <td>3</td></tr>
+<tr><td>24</td> <td>6</td></tr>
+<tr><td>25</td> <td>16</td></tr>
+<tr><td>26</td> <td>29</td></tr>
+<tr><td>27</td> <td>44</td></tr>
+<tr><td>28</td> <td>95</td></tr>
+<tr><td>29</td> <td>166</td></tr>
+<tr><td>30</td> <td>235</td></tr>
+<tr><td>31</td> <td>386</td></tr>
+<tr><td>32</td> <td>555</td></tr>
+<tr><td>33</td> <td>841</td></tr>
+<tr><td>34</td> <td>1259</td></tr>
+<tr><td>35</td> <td>1768</td></tr>
+<tr><td>36</td> <td>2420</td></tr>
+<tr><td>37</td> <td>3193</td></tr>
+<tr><td>38</td> <td>4183</td></tr>
+<tr><td>39</td> <td>5375</td></tr>
+<tr><td>40</td> <td>6708</td></tr>
+<tr><td>41</td> <td>8673</td></tr>
+<tr><td>42</td> <td>10590</td></tr>
+<tr><td>43</td> <td>12612</td></tr>
+<tr><td>44</td> <td>14714</td></tr>
+<tr><td>45</td> <td>17363</td></tr>
+<tr><td>46</td> <td>19601</td></tr>
+<tr><td>47</td> <td>22218</td></tr>
+<tr><td>48</td> <td>24704</td></tr>
+<tr><td>49</td> <td>27199</td></tr>
+<tr><td>50</td> <td>29401</td></tr>
+<tr><td>51</td> <td>31219</td></tr>
+<tr><td>52</td> <td>32684</td></tr>
+<tr><td>53</td> <td>34406</td></tr>
+<tr><td>54</td> <td>34830</td></tr>
+<tr><td>55</td> <td>34886</td></tr>
+<tr><td>56</td> <td>35426</td></tr>
+<tr><td>57</td> <td>34879</td></tr>
+<tr><td>58</td> <td>34208</td></tr>
+<tr><td>59</td> <td>32827</td></tr>
+<tr><td>60</td> <td>31837</td></tr>
+<tr><td>61</td> <td>29949</td></tr>
+<tr><td>62</td> <td>27893</td></tr>
+<tr><td>63</td> <td>25994</td></tr>
+<tr><td>64</td> <td>24009</td></tr>
+<tr><td>65</td> <td>21714</td></tr>
+<tr><td>66</td> <td>19622</td></tr>
+<tr><td>67</td> <td>17616</td></tr>
+<tr><td>68</td> <td>15540</td></tr>
+<tr><td>69</td> <td>13509</td></tr>
+<tr><td>70</td> <td>11933</td></tr>
+<tr><td>71</td> <td>10085</td></tr>
+<tr><td>72</td> <td>8876</td></tr>
+<tr><td>73</td> <td>7481</td></tr>
+<tr><td>74</td> <td>6369</td></tr>
+<tr><td>75</td> <td>5192</td></tr>
+<tr><td>76</td> <td>4396</td></tr>
+<tr><td>77</td> <td>3544</td></tr>
+<tr><td>78</td> <td>3021</td></tr>
+<tr><td>79</td> <td>2372</td></tr>
+<tr><td>80</td> <td>1896</td></tr>
+<tr><td>81</td> <td>1587</td></tr>
+<tr><td>82</td> <td>1289</td></tr>
+<tr><td>83</td> <td>991</td></tr>
+<tr><td>84</td> <td>801</td></tr>
+<tr><td>85</td> <td>593</td></tr>
+<tr><td>86</td> <td>494</td></tr>
+<tr><td>87</td> <td>374</td></tr>
+<tr><td>88</td> <td>306</td></tr>
+<tr><td>89</td> <td>236</td></tr>
+<tr><td>90</td> <td>183</td></tr>
+<tr><td>91</td> <td>125</td></tr>
+<tr><td>92</td> <td>94</td></tr>
+<tr><td>93</td> <td>67</td></tr>
+<tr><td>94</td> <td>46</td></tr>
+<tr><td>95</td> <td>46</td></tr>
+<tr><td>96</td> <td>18</td></tr>
+<tr><td>97</td> <td>17</td></tr>
+<tr><td>98</td> <td>14</td></tr>
+<tr><td>99</td> <td>15</td></tr>
+<tr><td>100</td> <td>3</td></tr>
+<tr><td>101</td> <td>6</td></tr>
+<tr><td>102</td> <td>6</td></tr>
+<tr><td>103</td> <td>4</td></tr>
+<tr><td>104</td> <td>4</td></tr>
+<tr><td>105</td> <td>1</td></tr>
+<tr><td>106</td> <td>1</td></tr>
+<tr><td>107</td> <td>0</td></tr>
+<tr><td>108</td> <td>1</td></tr>
+<tr><td>109</td> <td>0</td></tr>
+<tr><td>110</td> <td>0</td></tr>
+<tr><td>111</td> <td>1</td></tr>
+</table>
+
+<p class="j">
+The first obvious step in reducing the data is to plot a histogram
+showing the distribution of counts per minute; the vertical axis is
+the number of minutes in the database in which the number of counts on
+the horizontal axis were recorded.  The histogram table is reproduced
+in the bar at the right and plotted below.
+</p>
+
+<p class="c">
+<img src="crhist.png" width="609" height="373" alt="Per-minute Hourly Count Histogram" />
+</p>
+
+<p class="j">
+At first glance, this looks like the Gaussian &ldquo;bell curve&rdquo;
+you'd expect for a random process.  At second glance, however,
+it <em>doesn't</em>&hellip;note that the &ldquo;tail&rdquo; on the right hand
+side, corresponding to larger numbers of counts per minutes
+appears distinctly longer and &ldquo;fatter&rdquo; than the tail on the
+left side.  Still, let's proceed for the moment on the assumption
+that we do have a Gaussian distribution and calculate the
+mean and standard deviation from the data set.  Crunching the
+numbers, we find a mean value of 56.65 counts per minute with
+a standard deviation of 9.31.  We can then plot this Gaussian
+(normal) distribution as a red line superimposed on the histogram
+of experimental results.
+</p>
+
+<p class="c">
+<img src="crhinorm.png" width="609" height="373" alt="Hourly Count Histogram vs. Normal Distribution" />
+</p>
+
+<p class="j">
+This makes it even more apparent that there's something
+happening which isn't &ldquo;perfectly normal&rdquo;.  Note how the excess
+on the high end of the histogram pulls the best-fit normal
+distribution to the right of the actual data distribution, with
+the histogram bars to the left of the mean consistently exceeding the
+value of the normal curve and those to the right falling
+below.
+</p>
+
+<p class="subsuper">
+You might be inclined to wonder just how closely we should
+<em>expect</em> experimental results like these to approximate
+a normal distribution.  Could the observed deviation be nothing
+more than a statistical fluke?  No&hellip;compare the fit of the
+background radiation histogram above with the the plot below of a data set
+of comparable size collected using the same detector but, instead of
+monitoring background radiation in counts per minute, measuring
+counts per second with the detector illuminated by the HotBits
+Cesium-137 source.  Although this data set necessarily includes background
+radiation as well as counts due to the radiation source, with
+about 2000 counts per second from the <sup>137</sup>Cs source, the roughly
+one count per second from background radiation has a negligible influence
+on the results.
+</p>
+
+<p class="c">
+<img src="crcs137.png" width="609" height="373" alt="Distribution from Cs-137 source" />
+</p>
+
+<p class="j">
+In the radiation source data set we see an essentially perfect fit
+of the expected normal distribution to the experimental data.  This
+makes it quite clear that there's something curious going on with
+the background radiation data.  But what?
+</p>
+
+<h3>The Two Population Hypothesis</h3>
+
+<p class="j">
+One way we might end up with the kind of asymmetrical distribution
+we observe for the background radiation is if the radiation flux
+we're measuring is composed of two separate components, or
+<em>populations</em>, each individually normally distributed,
+but with different peak value, mean, and standard deviation.
+Suppose, for example, that the background radiation the
+detector measures is the sum of that due to decay of
+heavy elements (principally thorium and daughter nuclides)
+in the immediate vicinity (the earth beneath the detector and
+the structure of the building in which it is located) and a
+less intense cosmic ray flux which occurs in sporadic
+bursts with a greater mean value than the terrestrial flux.
+(At this point I'm simply suggesting these sources to illustrate
+how the background radiation might be composed of two (or more)
+separate populations with different statistics; I'm not
+identifying them as the actual components.)
+</p>
+
+<p class="j">
+Here's a &ldquo;toy model&rdquo; which illustrates how this might work.
+</p>
+
+<p class="c">
+<img src="cr2norm.png" width="609" height="373" alt="The Two Population Model" />
+</p>
+
+<p class="j">
+Let the brown curve labeled &ldquo;Population 1&rdquo; represent the
+terrestrial component of background radiation.  It has a
+mean value of around 58 counts per minute and exhibits a
+precisely Gaussian distribution with total flux equal to
+the area under the brown Population 1 curve.  We take the
+red &ldquo;Population 2&rdquo; curve to represent the supposed cosmic
+ray flux.  This also has a normal distribution, but with
+a mean value of about 70 counts per minute, a greater standard
+deviation (resulting in a broader distribution curve), and a
+total flux only about one tenth that of Population 1.
+</p>
+
+<p class="j">
+Since counts resulting from the two populations cannot be
+distinguished by our simple detector, what we observe is
+the sum of the two populations, shown as the orange &ldquo;Combined
+Flux&rdquo; curve.  Note the strong resemblance between this curve
+and the histogram plot from the detector; while Population
+1 dominates the result, the contribution of Population 2
+lifts and extends the high end of the combined distribution,
+precisely as we observed in the experimental data set.
+<br class="cr" />
+</p>
+
+<h3>Radiation by Local Solar Time</h3>
+
+<p class="j">
+Next I tried binning the results hourly by local solar time.
+The following chart shows the results, plotted in terms of
+average background radiation flux in micro-Roentgens per
+hour.  (The average background radiation of
+16.2&nbsp;&micro;R/hr&mdash;142&nbsp;mR per year&mdash;may
+seem high, but my detector is located at an
+altitude of 800 metres above sea level.  Both the soft and
+hard [primarily muon] components of cosmic rays are absorbed
+by the atmosphere, so at a higher altitude more they are
+more intense.  At sea level, cosmic rays contribute about
+30&nbsp;mR/year, but at the 10&nbsp;km altitude commercial jet aircraft
+fly, cosmic radiation accounts for about 2000&nbsp;mR/year; more
+than 60 times as intense.) When I plotted the hourly local
+time averages, I obtained the following result.
+</p>
+
+<p class="c">
+<img src="crhour.png" width="609" height="373" alt="Local Solar Time Hourly Flux" />
+</p>
+
+<p class="j">
+I've read about variations in cosmic ray flux varying
+with latitude, in Easterly and Westerly incidence,
+the solar cycle, and changes in the geomagnetic
+field, without a mention of a diurnal cycle, yet this
+plot appears to show a sinusoidal variation, with
+a magnitude variation between the highest three-hour
+period and the lowest of almost 6% of the mean
+value and, further, the trough in the curve seems to
+be about 12 hours from the peak.
+</p>
+
+<p class="j">
+To explore whether this might be nothing
+but an artifact or statistical fluctuation, I then re-binned
+the same data minute by minute, resulting in the following plot,
+in which the blue curve is the raw minute-binned data and the
+red curve is the same data filtered by an
+<a href="/hackdiet/www/subsubsection1_4_1_0_8_3.html">exponentially smoothed
+moving average</a> with a smoothing factor of 0.9.
+</p>
+
+<p class="c">
+<img src="crmin.png" width="609" height="373" alt="Local Solar Time Flux by Minute" />
+</p>
+
+<table class="leftgraph">
+<tr>
+<td>Randomly selected data subset</td>
+</tr>
+<tr>
+<td>
+<img src="crdysel.png" width="320" height="180" alt="Selected Solar Time Hourly Flux" />
+</td>
+</tr>
+</table>
+<p class="j">
+Well, it still looks credibly sinusoidal, with the maximum and
+minimum at about the same point.  As we all know, the human eye and
+brain are extraordinarily adept at seeing patterns in random data.  So
+let's try another test frequently applied as a reality check when
+apparently significant results appear in a data set.  The chart at the left
+was created by randomly selecting 25% of the points appearing in the
+complete data set and plotting them hour by hour.  We find that the
+selection has little effect on the shape of the curve or the location
+of its maximum and minimum.
+<br class="cl" />
+</p>
+
+<table class="leftgraph">
+<tr>
+<td>Outliers removed.</td>
+</tr>
+<tr>
+<td>
+<img src="crdyoutl.png" width="320" height="180" class="left"
+    alt="Outlier-Filtered Solar Time Hourly Flux" />
+</td>
+</tr>
+</table>
+<p class="j">
+Next, I decided to explore whether the apparent sinusoidal variation
+might disappear if I discarded outlying values, which might conceivably
+vary differently in time than those which make up the bulk of the
+database.  I pruned the bell curve at one standard deviation,
+then used the remaining data to prepare the plot at the left.  As you
+can see, the case for a sinusoidal variation is eroded
+somewhat, but the general shape, magnitude, and location of extrema
+is conserved.
+<br class="cl" />
+</p>
+
+<h3>Outliers and Populations</h3>
+
+<p class="j">
+The fact that removing the outlying values reduced the diurnal
+variation in the above plot suggests that we may indeed have
+two populations contributing to the observed flux, with the
+population responsible for the outlying values containing more
+diurnal variation than that near the mean.  To investigate this
+further, I passed the data set through a variety of filters and
+prepared the following plot.
+</p>
+
+<p class="c">
+<img src="crzday.png" width="609" height="373" alt="Diurnal variation by z score" />
+</p>
+
+<h3>In the Stars?</h3>
+
+<p class="j">
+Finally, I decided to plot the average radiation flux
+against local sidereal time.  Sidereal time tracks the
+position of the distant stars as viewed from a given point
+on the Earth.  At the same sidereal time, the same celestial
+objects (external to the solar system) will cross the
+celestial meridian above a given place on the Earth.
+Because the viewpoint of the Earth shifts as it orbits the
+Sun, the sidereal day (time between successive meridian
+crossings of a given star) is about 4 minutes shorter than
+the solar day (mean time between solar meridian crossings).
+Correlation with the sidereal period is powerful evidence
+for a distant source as the cause of a given effect.  For
+example, it was correlation with the sidereal period which
+provided early radio astronomers evidence the centre of the
+galaxy and Crab Nebula were celestial sources of the noise
+they were monitoring.  Here's a plot of average radiation
+flux by sidereal time.
+</p>
+
+<p class="c">
+<img src="crgmst.png" width="609" height="373" alt="Sidereal Time Hourly Histogram" />
+</p>
+
+<p class="c">
+<img src="crminmax.png" width="609" height="373" alt="Distribution near mean vs. outliers" />
+</p>
+
+<h3>What's Going On Here?</h3>
+
+<p class="j">
+Darned if I know!  The floor is open to inference and speculation.
+</p>
+
+<p class="j">
+First of all, I think it's reasonable to assume that any
+diurnal variation, should such exist, is due to cosmic
+rays.  The balance of background radiation is primarily due to
+thorium, radon, and daughter nuclides in the local environment.
+Where I live, in the Jura mountains of Switzerland, subterranean
+rocks are almost entirely limestone, which has little or no
+direct radioactivity (as opposed to, for example, granite), nor
+radon precursors.  In such an environment, it's hard to imagine
+a background radiation component other than cosmic rays
+which would vary on a daily basis.  (This would not be
+the case, for example, in a house with a
+radon problem, where you would expect to see a decrease when doors
+and windows were opened during the day.)
+</p>
+
+<p class="j">
+If the effect is genuine, and the cause is cosmic ray flux,
+what are possible causes?  The two which pop to mind are
+atmospheric density and the geomagnetic field.  During the day,
+as the Sun heats the atmosphere, it expands.  If you're at
+sea level, the total absorption cross section remains the same,
+but the altitude at which the primary cosmic ray first interacts
+with an atmospheric atom may increase.  Further, an increase in
+atmospheric temperature may change the scale height of of
+the atmosphere, which would perturb values measured at various
+altitudes above sea level.  We could explore temperature dependence
+by comparing average background radiation in summer and winter
+months.
+</p>
+
+<p class="j">
+Let's move on to the geomagnetic field.  It's well documented
+that the Earth's magnetic field and its interaction with the
+Sun's create measurable changes in cosmic ray incidence, since
+the proton and heavy ion component of primary particles is charged
+and follows magnetic field lines.  As any radio amateur or listener
+to AM radio in the 1950s knows, the ionosphere changes dramatically
+at night, allowing &ldquo;skip propagation&rdquo; of medium- and high-frequency
+signals far beyond the horizon.  Perhaps this effect also
+modifies the geomagnetic field, affecting the number of charged
+cosmic rays incident at a given location.
+</p>
+
+<p class="j">
+If there is a diurnal effect, why on Earth should it peak around
+07:00 local time?  Beats me.
+</p>
+
+<h3>References</h3>
+
+<blockquote>
+<p>
+    Clay, Roger, and Bruce Dawson.
+        <cite><a href="http://www.amazon.com/dp/0738201391/?tag=fourmilabwwwfour"
+            rel="Target:Amazon_Fourmilab">Cosmic Bullets</a></cite>.
+        Reading, MA: Addison-Wesley, 1997.
+        ISBN 978-0-7382-0139-9.
+</p>
+
+<p>
+    Wheeler, John Archibald, and Kenneth Ford.
+        <cite><a href="http://www.amazon.com/dp/0393319911/?tag=fourmilabwwwfour"
+            rel="Target:Amazon_Fourmilab">Geons, Black Holes, and Quantum Foam:
+                A Life in Physics</a></cite>.
+        New York: W.W. Norton, 1998.
+        ISBN 978-0-393-31991-0.
+<br class="cr" />
+</p>
+</blockquote>
+
+<h3>Download Raw Data and Analysis Programs</h3>
+
+<p class="j">
+If you'd like to perform your own investigations of this data set, you can
+<a href="cosmic.zip">download the data and programs</a> used in
+preparing this page.  The 2.8 Mb Zipped archive contains the raw data in
+<tt>rad5.csv</tt> and a variety of Perl programs which were used to
+process it in various ways.  There is no documentation and these
+programs are utterly unsupported: you're entirely on your own.
+</p>
+
+<p />
+<hr />
+<address>
+by <a href="/">John Walker</a>
+</address>
+</body>
+</html>
