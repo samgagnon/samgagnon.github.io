@@ -64,7 +64,7 @@
 
 <body class="standard" onload="externalLinks();">
 
-<h1 class="c">Introduction to Classical Mechanics</h1>
+<h1 class="c">Classical Mechanics: Lecture One</h1>
 <p class="cn">
 by <a href="/">Samuel Gagnon-Hartman</a><br />
 19 September 2024
@@ -74,77 +74,98 @@ by <a href="/">Samuel Gagnon-Hartman</a><br />
 <hr />
 <p />
 
-<p> This document serves as an introductory 45-minute lecture on classical mechanics. </p>
+<h3>Problem-solving Strategies</h3>
+
+<ol>
+  <li>Draw a diagram if appropriate</li>
+  <li>Determine which quantities are known and which are unknown</li>
+  <li>Solve using variable before substituting values</li>
+  <li>Verify units/dimensions</li>
+  <li>Check limiting/special cases</li>
+  <li>For numerical results: check the order of magnitude</li>
+</ol>
+
+<h4><i style="color: #FF6600;">Example:</i> How not to solve a problem</h4>
+
+What is the force of gravity between the Earth and the Sun?
+
+A quick look at Wikipedia gives us the equation for the 
+static gravitational force between two objects:
 
 <math display="block" class="tml-display" style="display:block math;">
-    <mrow>
-      <msub>
-        <mo movablelimits="false">∮</mo>
-        <mi>C</mi>
-      </msub>
-      <mover>
-        <mi>B</mi>
-        <mo stretchy="false" style="transform:scale(0.75) translate(10%, 30%);">→</mo>
-      </mover>
-      <mo>∘</mo>
+  <mrow>
+    <msub>
+      <mi>F</mi>
+      <mi>g</mi>
+    </msub>
+    <mo>=</mo>
+    <mfrac>
       <mrow>
-        <mi mathvariant="normal">d</mi>
+        <mi>G</mi>
+        <msub>
+          <mi>m</mi>
+          <mn>1</mn>
+        </msub>
+        <msub>
+          <mi>m</mi>
+          <mn>2</mn>
+        </msub>
       </mrow>
-      <mover>
-        <mi>l</mi>
-        <mo stretchy="false" style="transform:scale(0.75) translate(10%, 30%);">→</mo>
-      </mover>
-      <mo>=</mo>
-      <msub>
-        <mi>μ</mi>
-        <mn>0</mn>
-      </msub>
+      <msubsup>
+        <mi>r</mi>
+        <mn>12</mn>
+        <mn>2</mn>
+      </msubsup>
+    </mfrac>
+  </mrow>
+</math>
+
+where <math>
+  <semantics>
+    <msub>
+      <mi>F</mi>
+      <mi>g</mi>
+    </msub>
+    <annotation encoding="application/x-tex">F_g</annotation>
+  </semantics>
+</math> is the force of gravity, <math>
+  <semantics>
+    <mi>G</mi>
+    <annotation encoding="application/x-tex">G</annotation>
+  </semantics>
+</math> is Newton's constant of universal gravitation,
+<math>
+  <semantics>
+    <msub>
+      <mi>m</mi>
+      <mi>i</mi>
+    </msub>
+    <annotation encoding="application/x-tex">m_i</annotation>
+  </semantics>
+</math> are the masses of the two objects, and 
+<math>
+  <semantics>
+    <msub>
+      <mi>r</mi>
       <mrow>
-        <mo fence="true" form="prefix">(</mo>
-        <msub>
-          <mi>I</mi>
-          <mtext>enc</mtext>
-        </msub>
-        <mo>+</mo>
-        <msub>
-          <mi>ε</mi>
-          <mn>0</mn>
-        </msub>
-        <mfrac>
-          <mrow>
-            <mi mathvariant="normal">d</mi>
-          </mrow>
-          <mrow>
-            <mrow>
-              <mi mathvariant="normal">d</mi>
-            </mrow>
-            <mi>t</mi>
-          </mrow>
-        </mfrac>
-        <msub>
-          <mo movablelimits="false">∫</mo>
-          <mi>S</mi>
-        </msub>
-        <mrow>
-          <mover>
-            <mi>E</mi>
-            <mo stretchy="false" style="transform:scale(0.75) translate(10%, 30%);">→</mo>
-          </mover>
-          <mo>∘</mo>
-          <mover>
-            <mi>n</mi>
-            <mo stretchy="false" class="tml-xshift" style="math-style:normal;math-depth:0;">^</mo>
-          </mover>
-        </mrow>
-        <mspace width="0.2778em"></mspace>
-        <mrow>
-          <mi mathvariant="normal">d</mi>
-        </mrow>
-        <mi>a</mi>
-        <mo fence="true" form="postfix">)</mo>
+        <mi>i</mi>
+        <mi>j</mi>
       </mrow>
-    </mrow>
-  </math>
+    </msub>
+    <annotation encoding="application/x-tex">r_{ij}</annotation>
+  </semantics>
+</math> is the distance between the two objects.
+
+Plugging in the numbers, we get:
+
+<button type='button' id='btn'>Button</button>
+<script>
+  document.getElementById('btn').addEventListener('click', function() {
+    var text = "Copy/Paste this text!";
+    navigator.clipboard.writeText(text);
+    alert("Copied the text: " + text);
+  });
+</script>
 
 </body>
 </html>
