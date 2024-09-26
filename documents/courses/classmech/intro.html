@@ -90,7 +90,15 @@ by <a href="/">Samuel Gagnon-Hartman</a><br />
 What is the force of gravity between the Earth and the Sun?
 
 A quick look at Wikipedia gives us the equation for the 
-static gravitational force between two objects:
+static gravitational force between two objects 
+<button type='button' id='btn'>LaTeX</button>
+<script>
+  document.getElementById('btn').addEventListener('click', function() {
+    var text = "F_g=\frac{Gm_1m_2}{r_{ij}^2}";
+    navigator.clipboard.writeText(text);
+    alert("Copied the text: " + text);
+  });
+</script>:
 
 <math display="block" class="tml-display" style="display:block math;">
   <mrow>
@@ -158,14 +166,6 @@ where <math>
 
 Plugging in the numbers, we get:
 
-<button type='button' id='btn'>Button</button>
-<script>
-  document.getElementById('btn').addEventListener('click', function() {
-    var text = "Copy/Paste this text!";
-    navigator.clipboard.writeText(text);
-    alert("Copied the text: " + text);
-  });
-</script>
 
 </body>
 </html>
